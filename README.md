@@ -4,7 +4,7 @@ Este molde automatiza o processo de desenvolvimento de software usando uma equip
 
 ## 🎯 Visão Geral
 
-O molde simula uma equipe de desenvolvimento completa com 7 agentes especializados:
+O molde simula uma equipe de desenvolvimento completa com 10 agentes especializados:
 
 - **Product Owner**: Define requisitos e prioridades do produto
 - **Arquiteto de Software**: Projeta a arquitetura e estrutura do sistema
@@ -13,6 +13,9 @@ O molde simula uma equipe de desenvolvimento completa com 7 agentes especializad
 - **Profissional DevOps**: Gerencia infraestrutura e deploy
 - **Tester**: Executa testes e garante qualidade
 - **UX Designer**: Foca na experiência do usuário
+- **Desenvolvedor Fullstack**: Desenvolve frontend e backend de forma integrada (para sistemas com front e back separados)
+- **UI Designer**: Design visual, design systems e componentes de UI
+- **Desenvolvedor Mobile**: Desenvolve aplicativos iOS e Android (React Native/Flutter ou nativo)
 
 ## 📁 Estrutura do Projeto
 
@@ -25,7 +28,10 @@ agent-team-template/
 │   ├── backend-dev/
 │   ├── devops/
 │   ├── tester/
-│   └── ux/
+│   ├── ux/
+│   ├── fullstack-dev/
+│   ├── ui-designer/
+│   └── mobile-dev/
 ├── workflows/                 # Fluxos de trabalho
 │   ├── complete-development.json
 │   ├── feature-development.json
@@ -38,7 +44,10 @@ agent-team-template/
 │   ├── backend-dev-prompt.md
 │   ├── devops-prompt.md
 │   ├── tester-prompt.md
-│   └── ux-prompt.md
+│   ├── ux-prompt.md
+│   ├── fullstack-dev-prompt.md
+│   ├── ui-designer-prompt.md
+│   └── mobile-dev-prompt.md
 ├── scripts/                   # Scripts de automação
 │   ├── setup.ps1
 │   ├── activate-agent.ps1
@@ -126,6 +135,21 @@ agent-team-template/
 - **Expertise**: User research, design thinking, prototipação, testes de usabilidade
 - **Colabora com**: Product Owner, Frontend Dev
 
+### Desenvolvedor Fullstack
+- **Responsabilidades**: Desenvolvimento integrado de frontend e backend; ideal quando front e back são desenvolvidos de forma coordenada ou em projetos menores
+- **Expertise**: React/Vue + Node/Python/Java, APIs, integração front-back, deploy fullstack
+- **Colabora com**: Arquiteto, UX, UI Designer, Tester, DevOps
+
+### UI Designer
+- **Responsabilidades**: Design visual, design systems, componentes de UI e consistência entre telas
+- **Expertise**: Design systems, tipografia e cores, Figma/Sketch, especificações para dev
+- **Colabora com**: UX, Frontend Dev, Product Owner
+
+### Desenvolvedor Mobile
+- **Responsabilidades**: Aplicativos iOS e Android (React Native/Flutter ou nativos), integração com APIs, publicação nas lojas
+- **Expertise**: React Native/Flutter, Swift/Kotlin, APIs mobile, performance, store deployment
+- **Colabora com**: UX, UI Designer, Backend, Fullstack, Tester, DevOps
+
 ## 🔄 Workflows Disponíveis
 
 ### 1. Desenvolvimento Completo
@@ -175,6 +199,9 @@ Cada agente possui templates de prompts específicos em `templates/`:
 - **devops-prompt.md**: Templates para configuração de infraestrutura e deploy
 - **tester-prompt.md**: Templates para criação de planos de teste e automação
 - **ux-prompt.md**: Templates para pesquisa de usuário e design de interface
+- **fullstack-dev-prompt.md**: Templates para desenvolvimento integrado frontend e backend
+- **ui-designer-prompt.md**: Templates para design visual e design systems
+- **mobile-dev-prompt.md**: Templates para apps mobile e publicação nas lojas
 
 ## 🛠️ Scripts de Automação
 

@@ -51,6 +51,24 @@ $agents = @(
         name = "UX Designer"
         description = "Foca na experiencia do usuario"
         expertise = @("User research", "Wireframing", "Usability testing")
+    },
+    @{
+        key = "fullstack-dev"
+        name = "Desenvolvedor Fullstack"
+        description = "Desenvolve frontend e backend de forma integrada"
+        expertise = @("React/Vue + Node/Python", "APIs", "Integracao front-back")
+    },
+    @{
+        key = "ui-designer"
+        name = "UI Designer"
+        description = "Design visual, design systems e componentes de UI"
+        expertise = @("Design systems", "Componentes UI", "Figma/Sketch", "Style guide")
+    },
+    @{
+        key = "mobile-dev"
+        name = "Desenvolvedor Mobile"
+        description = "Apps iOS e Android (React Native/Flutter ou nativo)"
+        expertise = @("React Native/Flutter", "Swift/Kotlin", "APIs mobile", "Store deploy")
     }
 )
 

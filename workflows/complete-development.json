@@ -5,7 +5,7 @@
     "phases": [
       {
         "phase": "1. Planejamento e Análise",
-        "agents": ["product-owner", "ux"],
+        "agents": ["product-owner", "ux", "ui-designer"],
         "duration": "1-2 semanas",
         "activities": [
           "Análise de requisitos",
@@ -23,7 +23,7 @@
       },
       {
         "phase": "2. Arquitetura e Design",
-        "agents": ["architect", "ux"],
+        "agents": ["architect", "ux", "ui-designer"],
         "duration": "1 semana",
         "activities": [
           "Design da arquitetura",
@@ -41,7 +41,7 @@
       },
       {
         "phase": "3. Desenvolvimento",
-        "agents": ["frontend-dev", "backend-dev"],
+        "agents": ["frontend-dev", "backend-dev", "fullstack-dev", "mobile-dev"],
         "duration": "3-4 semanas",
         "activities": [
           "Implementação frontend",
@@ -58,7 +58,7 @@
       },
       {
         "phase": "4. Testes e Qualidade",
-        "agents": ["tester", "frontend-dev", "backend-dev"],
+        "agents": ["tester", "frontend-dev", "backend-dev", "fullstack-dev", "mobile-dev"],
         "duration": "1-2 semanas",
         "activities": [
           "Testes funcionais",

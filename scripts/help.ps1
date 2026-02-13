@@ -15,6 +15,9 @@ Write-Host "- Backend Dev: Desenvolve APIs e logica de negocio" -ForegroundColor
 Write-Host "- DevOps: Gerencia infraestrutura e deploy" -ForegroundColor White
 Write-Host "- Tester: Executa testes e garante qualidade" -ForegroundColor White
 Write-Host "- UX: Foca na experiencia do usuario" -ForegroundColor White
+Write-Host "- Fullstack Dev: Desenvolve frontend e backend integrados" -ForegroundColor White
+Write-Host "- UI Designer: Design visual e design systems" -ForegroundColor White
+Write-Host "- Mobile Dev: Apps iOS e Android" -ForegroundColor White -ForegroundColor White
 
 Write-Host "`nWorkflows Disponiveis:" -ForegroundColor Cyan
 Write-Host "- complete-development: Do conceito ao deploy" -ForegroundColor White

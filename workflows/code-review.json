@@ -21,7 +21,7 @@
       },
       {
         "phase": "2. Revisão Técnica",
-        "agents": ["architect", "backend-dev", "frontend-dev"],
+        "agents": ["architect", "backend-dev", "frontend-dev", "fullstack-dev"],
         "duration": "30-60 minutos",
         "activities": [
           "Revisão de arquitetura",
@@ -53,7 +53,7 @@
       },
       {
         "phase": "4. Revisão de UX/UI",
-        "agents": ["ux", "frontend-dev"],
+        "agents": ["ux", "ui-designer", "frontend-dev"],
         "duration": "20-30 minutos",
         "activities": [
           "Verificação de design",

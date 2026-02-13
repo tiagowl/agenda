@@ -34,7 +34,10 @@ $configFiles = @(
     "agents/backend-dev/config.json",
     "agents/devops/config.json",
     "agents/tester/config.json",
-    "agents/ux/config.json"
+    "agents/ux/config.json",
+    "agents/fullstack-dev/config.json",
+    "agents/ui-designer/config.json",
+    "agents/mobile-dev/config.json"
 )
 
 foreach ($configFile in $configFiles) {
@@ -63,7 +66,10 @@ $projectConfig = @{
             "backend-dev",
             "devops",
             "tester",
-            "ux"
+            "ux",
+            "fullstack-dev",
+            "ui-designer",
+            "mobile-dev"
         )
         workflows = @(
             "complete-development",
@@ -91,6 +97,9 @@ $cursorRules = @"
 - DevOps: Gerencia infraestrutura e deploy
 - Tester: Executa testes e garante qualidade
 - UX: Foca na experiencia do usuario
+- Fullstack Dev: Desenvolve frontend e backend integrados
+- UI Designer: Design visual e design systems
+- Mobile Dev: Apps iOS e Android
 
 ## Como Usar
 1. Use o comando: ./scripts/activate-agent.ps1 [agent-name]

@@ -21,7 +21,7 @@
       },
       {
         "phase": "2. Investigação Técnica",
-        "agents": ["frontend-dev", "backend-dev", "architect"],
+        "agents": ["frontend-dev", "backend-dev", "fullstack-dev", "architect"],
         "duration": "2-4 horas",
         "activities": [
           "Análise do código",
@@ -37,7 +37,7 @@
       },
       {
         "phase": "3. Implementação da Correção",
-        "agents": ["frontend-dev", "backend-dev"],
+        "agents": ["frontend-dev", "backend-dev", "fullstack-dev", "mobile-dev"],
         "duration": "2-8 horas",
         "activities": [
           "Implementação da correção",
@@ -53,7 +53,7 @@
       },
       {
         "phase": "4. Testes e Validação",
-        "agents": ["tester", "frontend-dev", "backend-dev"],
+        "agents": ["tester", "frontend-dev", "backend-dev", "fullstack-dev", "mobile-dev"],
         "duration": "1-2 horas",
         "activities": [
           "Testes da correção",

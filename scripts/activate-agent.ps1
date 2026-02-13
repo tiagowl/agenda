@@ -16,6 +16,9 @@ $availableAgents = @{
     "devops" = "Profissional DevOps"
     "tester" = "Tester"
     "ux" = "UX Designer"
+    "fullstack-dev" = "Desenvolvedor Fullstack"
+    "ui-designer" = "UI Designer"
+    "mobile-dev" = "Desenvolvedor Mobile"
 }
 
 # Verificar se o agente existe

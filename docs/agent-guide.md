@@ -294,6 +294,72 @@ Como UX Designer, preciso que você:
 - `design-system.md`
 - `usability-reports.md`
 
+## 🔄 Desenvolvedor Fullstack
+
+### Responsabilidades
+- Desenvolver backend (APIs, lógica, persistência) e frontend de forma integrada
+- Definir e manter contrato entre frontend e backend
+- Garantir testes e deploy do sistema completo
+- Ideal quando front e back são desenvolvidos de forma coordenada ou em projetos menores
+
+### Quando Usar
+- Projetos com front e back separados mas desenvolvidos em conjunto
+- Times enxutos ou MVP
+- Features que atravessam toda a stack
+
+### Template de Prompt
+Use o arquivo `templates/fullstack-dev-prompt.md`.
+
+### Outputs Típicos
+- Código backend e frontend
+- Schema do banco / migrações
+- Documentação da API
+- Testes de integração
+
+## 🎨 UI Designer
+
+### Responsabilidades
+- Definir design system (cores, tipografia, espaçamentos, componentes)
+- Criar especificações visuais e componentes de UI reutilizáveis
+- Garantir consistência visual e acessibilidade
+- Entregar specs e assets para frontend e mobile
+
+### Quando Usar
+- Criação ou evolução do design system
+- Novas telas ou fluxos visuais
+- Especificação de componentes para desenvolvimento
+
+### Template de Prompt
+Use o arquivo `templates/ui-designer-prompt.md`.
+
+### Outputs Típicos
+- `design-system.md` / `style-guide.md`
+- Especificações de componentes de UI
+- Mockups de telas
+- Assets (ícones, imagens)
+
+## 📱 Desenvolvedor Mobile
+
+### Responsabilidades
+- Implementar aplicativos iOS e Android (React Native/Flutter ou nativos)
+- Integrar com APIs e serviços backend
+- Garantir performance e publicação nas lojas
+- Preparar builds, store listings e atualizações
+
+### Quando Usar
+- Desenvolvimento de app mobile
+- Novas features no app
+- Integração com API ou publicação nas lojas
+
+### Template de Prompt
+Use o arquivo `templates/mobile-dev-prompt.md`.
+
+### Outputs Típicos
+- Código do app (telas, serviços, integração)
+- Configuração de build
+- Assets e metadados para App Store / Play Store
+- Release notes
+
 ## 🤝 Colaboração Entre Agentes
 
 ### Fluxo Típico
@@ -342,3 +408,18 @@ Como UX Designer, preciso que você:
 - Foque na experiência do usuário
 - Teste com usuários reais
 - Itere baseado em feedback
+
+### Para Desenvolvedor Fullstack
+- Mantenha contrato API estável entre front e back
+- Use tipos/interfaces compartilhados quando possível
+- Priorize testes de integração
+
+### Para UI Designer
+- Mantenha o design system consistente
+- Documente specs para dev (medidas, tokens, estados)
+- Considere acessibilidade (contraste, tamanhos)
+
+### Para Desenvolvedor Mobile
+- Teste em dispositivos reais e emuladores
+- Otimize bundle e performance em listas
+- Siga guidelines das lojas (App Store / Play Store)
