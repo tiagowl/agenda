@@ -4,6 +4,24 @@
     "description": "Workflow para desenvolvimento de uma nova funcionalidade",
     "phases": [
       {
+        "phase": "0. Ideação de Features",
+        "agents": ["feature-suggester", "product-owner"],
+        "duration": "1-2 dias",
+        "activities": [
+          "Coleta de diretrizes do usuário",
+          "Análise de mercado e tendências",
+          "Pesquisa competitiva",
+          "Geração de ideias de features",
+          "Priorização por valor e viabilidade"
+        ],
+        "outputs": [
+          "feature-suggestions.md",
+          "market-analysis.md",
+          "competitive-analysis.md",
+          "value-proposition.md"
+        ]
+      },
+      {
         "phase": "1. Análise da Feature",
         "agents": ["product-owner", "ux", "ui-designer"],
         "duration": "2-3 dias",
@@ -84,6 +102,7 @@
       }
     ],
     "handoff_rules": {
+      "feature-suggester -> product-owner": "Sugestões de features priorizadas com análise de mercado",
       "product-owner -> architect": "Requisitos aprovados e critérios de aceitação definidos",
       "architect -> developers": "Design técnico aprovado e APIs especificadas",
       "developers -> tester": "Código implementado e testes unitários passando",

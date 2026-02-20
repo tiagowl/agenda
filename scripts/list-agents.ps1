@@ -69,6 +69,12 @@ $agents = @(
         name = "Desenvolvedor Mobile"
         description = "Apps iOS e Android (React Native/Flutter ou nativo)"
         expertise = @("React Native/Flutter", "Swift/Kotlin", "APIs mobile", "Store deploy")
+    },
+    @{
+        key = "feature-suggester"
+        name = "Feature Suggester"
+        description = "Sugere features atraentes e inovadoras baseadas nas diretrizes do usuario"
+        expertise = @("Analise de mercado", "Ideacao de features", "Analise competitiva", "Inovacao")
     }
 )
 

@@ -4,7 +4,7 @@ Este molde automatiza o processo de desenvolvimento de software usando uma equip
 
 ## 🎯 Visão Geral
 
-O molde simula uma equipe de desenvolvimento completa com 10 agentes especializados:
+O molde simula uma equipe de desenvolvimento completa com 11 agentes especializados:
 
 - **Product Owner**: Define requisitos e prioridades do produto
 - **Arquiteto de Software**: Projeta a arquitetura e estrutura do sistema
@@ -16,6 +16,7 @@ O molde simula uma equipe de desenvolvimento completa com 10 agentes especializa
 - **Desenvolvedor Fullstack**: Desenvolve frontend e backend de forma integrada (para sistemas com front e back separados)
 - **UI Designer**: Design visual, design systems e componentes de UI
 - **Desenvolvedor Mobile**: Desenvolve aplicativos iOS e Android (React Native/Flutter ou nativo)
+- **Feature Suggester**: Sugere features atraentes e inovadoras baseadas nas diretrizes do usuário
 
 ## 📁 Estrutura do Projeto
 
@@ -31,7 +32,8 @@ agent-team-template/
 │   ├── ux/
 │   ├── fullstack-dev/
 │   ├── ui-designer/
-│   └── mobile-dev/
+│   ├── mobile-dev/
+│   └── feature-suggester/
 ├── workflows/                 # Fluxos de trabalho
 │   ├── complete-development.json
 │   ├── feature-development.json
@@ -47,7 +49,8 @@ agent-team-template/
 │   ├── ux-prompt.md
 │   ├── fullstack-dev-prompt.md
 │   ├── ui-designer-prompt.md
-│   └── mobile-dev-prompt.md
+│   ├── mobile-dev-prompt.md
+│   └── feature-suggester-prompt.md
 ├── scripts/                   # Scripts de automação
 │   ├── setup.ps1
 │   ├── activate-agent.ps1
@@ -150,6 +153,12 @@ agent-team-template/
 - **Expertise**: React Native/Flutter, Swift/Kotlin, APIs mobile, performance, store deployment
 - **Colabora com**: UX, UI Designer, Backend, Fullstack, Tester, DevOps
 
+### Feature Suggester
+- **Responsabilidades**: Sugerir features atraentes e inovadoras, análise de mercado, identificar oportunidades de diferenciação
+- **Expertise**: Análise de mercado, ideação de funcionalidades, análise competitiva, proposta de valor, gamificação e engajamento
+- **Colabora com**: Product Owner, UX, Architect, UI Designer
+- **Inputs necessários**: Diretrizes do usuário (tipo de sistema, público-alvo, objetivos de negócio)
+
 ## 🔄 Workflows Disponíveis
 
 ### 1. Desenvolvimento Completo
@@ -202,6 +211,7 @@ Cada agente possui templates de prompts específicos em `templates/`:
 - **fullstack-dev-prompt.md**: Templates para desenvolvimento integrado frontend e backend
 - **ui-designer-prompt.md**: Templates para design visual e design systems
 - **mobile-dev-prompt.md**: Templates para apps mobile e publicação nas lojas
+- **feature-suggester-prompt.md**: Templates para sugestão de features inovadoras baseadas em diretrizes
 
 ## 🛠️ Scripts de Automação
 

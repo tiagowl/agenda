@@ -45,7 +45,10 @@
 # 1. Iniciar workflow de feature
 ./scripts/start-workflow.ps1 feature-development
 
-# 2. Ativar Product Owner para definir requisitos
+# 2. Ativar Feature Suggester para ideação (opcional, mas recomendado)
+./scripts/activate-agent.ps1 feature-suggester
+
+# 3. Ativar Product Owner para definir requisitos
 ./scripts/activate-agent.ps1 product-owner
 ```
 
@@ -71,6 +74,7 @@
 
 | Agente | Chave | Quando Usar |
 |--------|-------|-------------|
+| **Feature Suggester** | `feature-suggester` | Sugerir features inovadoras, análise de mercado |
 | **Product Owner** | `product-owner` | Definir requisitos, user stories, priorizar |
 | **Arquiteto** | `architect` | Projetar arquitetura, escolher tecnologias |
 | **Frontend Dev** | `frontend-dev` | Implementar interface, componentes |
@@ -78,6 +82,9 @@
 | **DevOps** | `devops` | Configurar infraestrutura, deploy |
 | **Tester** | `tester` | Executar testes, garantir qualidade |
 | **UX Designer** | `ux` | Pesquisar usuário, criar wireframes |
+| **UI Designer** | `ui-designer` | Design visual, design systems |
+| **Fullstack Dev** | `fullstack-dev` | Desenvolvimento frontend e backend integrado |
+| **Mobile Dev** | `mobile-dev` | Apps iOS e Android |
 
 ## 🔄 Workflows Disponíveis
 
@@ -115,6 +122,12 @@ Como Product Owner, preciso que você analise os requisitos para um sistema de g
 ```
 
 ## 🔄 Fluxo Típico de Desenvolvimento
+
+### 0. **Feature Suggester** → Sugere features inovadoras baseadas nas diretrizes
+```powershell
+./scripts/activate-agent.ps1 feature-suggester
+```
+*Forneça: tipo de sistema, público-alvo, objetivos de negócio*
 
 ### 1. **Product Owner** → Define requisitos e user stories
 ```powershell

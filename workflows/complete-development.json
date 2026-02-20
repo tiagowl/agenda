@@ -4,6 +4,26 @@
     "description": "Workflow completo do conceito ao deploy",
     "phases": [
       {
+        "phase": "0. Descoberta e Ideação",
+        "agents": ["feature-suggester", "product-owner"],
+        "duration": "3-5 dias",
+        "activities": [
+          "Coleta de diretrizes e objetivos",
+          "Análise de mercado e tendências",
+          "Pesquisa competitiva",
+          "Ideação de features inovadoras",
+          "Priorização inicial de features",
+          "Definição de proposta de valor"
+        ],
+        "outputs": [
+          "feature-suggestions.md",
+          "market-analysis.md",
+          "competitive-analysis.md",
+          "feature-roadmap.md",
+          "value-proposition.md"
+        ]
+      },
+      {
         "phase": "1. Planejamento e Análise",
         "agents": ["product-owner", "ux", "ui-designer"],
         "duration": "1-2 semanas",
@@ -92,10 +112,12 @@
       }
     ],
     "collaboration_matrix": {
-      "product-owner": ["ux", "architect", "tester"],
-      "architect": ["product-owner", "frontend-dev", "backend-dev", "devops"],
-      "ux": ["product-owner", "frontend-dev"],
-      "frontend-dev": ["ux", "backend-dev", "tester"],
+      "feature-suggester": ["product-owner", "ux", "architect", "ui-designer"],
+      "product-owner": ["feature-suggester", "ux", "architect", "tester"],
+      "architect": ["feature-suggester", "product-owner", "frontend-dev", "backend-dev", "devops"],
+      "ux": ["feature-suggester", "product-owner", "frontend-dev"],
+      "ui-designer": ["feature-suggester", "ux", "frontend-dev"],
+      "frontend-dev": ["ux", "ui-designer", "backend-dev", "tester"],
       "backend-dev": ["architect", "frontend-dev", "devops", "tester"],
       "devops": ["architect", "backend-dev", "tester"],
       "tester": ["product-owner", "frontend-dev", "backend-dev", "devops"]
