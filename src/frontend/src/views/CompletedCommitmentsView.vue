@@ -1,8 +1,8 @@
 <template>
   <section class="space-y-4">
     <header class="card">
-      <h2 class="text-xl font-semibold">Compromissos Pendentes</h2>
-      <p class="text-sm text-slate-600">Todos os compromissos marcados que ainda nao aconteceram.</p>
+      <h2 class="text-xl font-semibold">Compromissos Realizados</h2>
+      <p class="text-sm text-slate-600">Lista com todos os compromissos marcados como realizados.</p>
     </header>
 
     <div
@@ -20,7 +20,7 @@
     <CommitmentList
       :items="items"
       :selected-ids="selectedIds"
-      empty-message="Nenhum compromisso pendente no momento."
+      empty-message="Nenhum compromisso realizado ainda."
       @edit="openEdit"
       @remove="deleteOne"
       @toggle-select="toggleSelect"
@@ -44,12 +44,7 @@ import { useScheduleStore } from "../stores/schedule";
 import type { Commitment } from "../types";
 
 const schedule = useScheduleStore();
-const items = computed(() => schedule.pendingUpcomingCommitments);
-const allSelected = computed(() => {
-  const list = items.value;
-  if (list.length === 0) return false;
-  return list.every((c) => selectedIds.value.includes(c.id));
-});
+const items = computed(() => schedule.commitments.filter((item) => item.completed));
 const selectedIds = ref<string[]>([]);
 const showModal = ref(false);
 const editing = ref<Commitment | undefined>(undefined);

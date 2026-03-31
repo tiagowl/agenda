@@ -5,7 +5,9 @@
         <h2 class="text-xl font-semibold">Agenda</h2>
         <p class="text-sm text-slate-600">Gerencie seus compromissos com visualizacao diaria, semanal e mensal.</p>
       </div>
-      <button class="btn-primary" @click="openCreate">Novo compromisso</button>
+      <div class="flex flex-wrap gap-2">
+        <button class="btn-primary" @click="openCreate">Novo compromisso</button>
+      </div>
     </div>
 
     <div class="card space-y-3">
@@ -27,7 +29,30 @@
       </label>
     </div>
 
-    <CommitmentList :items="filteredItems" @edit="openEdit" />
+    <div
+      v-if="filteredItems.length > 0"
+      class="card flex flex-wrap items-center justify-between gap-2 border-slate-200 bg-slate-50"
+    >
+      <button class="btn-secondary" type="button" @click="toggleSelectAllFiltered">
+        {{ allFilteredSelected ? "Desmarcar todos" : "Marcar todos" }}
+      </button>
+      <button
+        v-if="selectedIds.length > 0"
+        class="btn-danger"
+        type="button"
+        @click="removeSelected"
+      >
+        Excluir marcados ({{ selectedIds.length }})
+      </button>
+    </div>
+
+    <CommitmentList
+      :items="filteredItems"
+      :selected-ids="selectedIds"
+      @edit="openEdit"
+      @remove="removeItem"
+      @toggle-select="toggleSelect"
+    />
 
     <CommitmentFormModal
       v-if="showModal"
@@ -52,6 +77,7 @@ const selectedMode = ref<CalendarViewMode>("day");
 const modes: CalendarViewMode[] = ["day", "week", "month"];
 const showModal = ref(false);
 const editing = ref<Commitment | undefined>(undefined);
+const selectedIds = ref<string[]>([]);
 
 const filteredItems = computed(() => {
   const selected = schedule.selectedDate;
@@ -64,6 +90,12 @@ const filteredItems = computed(() => {
     return schedule.commitments.filter((c) => allowed.includes(c.date));
   }
   return schedule.commitments.filter((c) => isSameMonth(c.date, selected));
+});
+
+const allFilteredSelected = computed(() => {
+  const list = filteredItems.value;
+  if (list.length === 0) return false;
+  return list.every((c) => selectedIds.value.includes(c.id));
 });
 
 function modeLabel(mode: CalendarViewMode): string {
@@ -95,6 +127,29 @@ function saveItem(payload: Pick<Commitment, "id" | "name" | "date" | "time" | "n
 
 function removeItem(id: string) {
   schedule.removeCommitment(id);
+  selectedIds.value = selectedIds.value.filter((selectedId) => selectedId !== id);
   closeModal();
+}
+
+function toggleSelect(id: string) {
+  if (selectedIds.value.includes(id)) {
+    selectedIds.value = selectedIds.value.filter((selectedId) => selectedId !== id);
+    return;
+  }
+  selectedIds.value = [...selectedIds.value, id];
+}
+
+function removeSelected() {
+  const idsToRemove = [...selectedIds.value];
+  idsToRemove.forEach((id) => schedule.removeCommitment(id));
+  selectedIds.value = [];
+}
+
+function toggleSelectAllFiltered() {
+  if (allFilteredSelected.value) {
+    selectedIds.value = [];
+    return;
+  }
+  selectedIds.value = filteredItems.value.map((c) => c.id);
 }
 </script>
