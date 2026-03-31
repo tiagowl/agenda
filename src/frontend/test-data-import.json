@@ -1,0 +1,65 @@
+{
+  "version": "1.0.0",
+  "commitments": [
+    {
+      "id": "c1b2a3d4-e5f6-47a8-9012-111111111111",
+      "name": "Reuniao de alinhamento semanal",
+      "date": "2026-04-01",
+      "time": "09:00",
+      "notes": "Revisar prioridades da semana e definir proximos passos.",
+      "completed": false,
+      "createdAt": "2026-03-31T10:00:00.000Z",
+      "updatedAt": "2026-03-31T10:00:00.000Z"
+    },
+    {
+      "id": "c1b2a3d4-e5f6-47a8-9012-222222222222",
+      "name": "Consulta medica",
+      "date": "2026-04-01",
+      "time": "14:30",
+      "notes": "Levar exames anteriores e lista de medicamentos.",
+      "completed": false,
+      "createdAt": "2026-03-31T10:05:00.000Z",
+      "updatedAt": "2026-03-31T10:05:00.000Z"
+    },
+    {
+      "id": "c1b2a3d4-e5f6-47a8-9012-333333333333",
+      "name": "Treino funcional",
+      "date": "2026-04-02",
+      "time": "07:00",
+      "notes": "Foco em mobilidade e cardio leve.",
+      "completed": true,
+      "createdAt": "2026-03-31T10:10:00.000Z",
+      "updatedAt": "2026-03-31T10:10:00.000Z"
+    },
+    {
+      "id": "c1b2a3d4-e5f6-47a8-9012-444444444444",
+      "name": "Estudo de arquitetura Vue",
+      "date": "2026-04-02",
+      "time": "20:00",
+      "notes": "Ler sobre composables, stores e padroes de organizacao.",
+      "completed": false,
+      "createdAt": "2026-03-31T10:15:00.000Z",
+      "updatedAt": "2026-03-31T10:15:00.000Z"
+    },
+    {
+      "id": "c1b2a3d4-e5f6-47a8-9012-555555555555",
+      "name": "Pagamento de contas",
+      "date": "2026-04-03",
+      "time": "12:00",
+      "notes": "Energia, internet e cartao.",
+      "completed": false,
+      "createdAt": "2026-03-31T10:20:00.000Z",
+      "updatedAt": "2026-03-31T10:20:00.000Z"
+    },
+    {
+      "id": "c1b2a3d4-e5f6-47a8-9012-666666666666",
+      "name": "Revisao mensal de metas",
+      "date": "2026-04-04",
+      "time": "18:00",
+      "notes": "Comparar metas planejadas vs executadas e ajustar plano.",
+      "completed": false,
+      "createdAt": "2026-03-31T10:25:00.000Z",
+      "updatedAt": "2026-03-31T10:25:00.000Z"
+    }
+  ]
+}

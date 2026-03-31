@@ -67,16 +67,16 @@ Antes de sugerir features, preciso entender melhor seu projeto.
 Por favor, me forneça as seguintes informações:
 
 **Obrigatórias:**
-1. Qual o tipo de sistema? (ex: e-commerce, SaaS B2B, app mobile, rede social)
-2. Quem é o público-alvo principal?
-3. Quais são os principais objetivos de negócio?
+1. Qual o tipo de sistema? (ex: e-commerce, SaaS B2B, app mobile, rede social) Sistema de agenda;
+2. Quem é o público-alvo principal? Só eu;
+3. Quais são os principais objetivos de negócio? Organizar meus compromissos de forma eficiente e intuitiva;
 
 **Opcionais (mas muito úteis):**
 4. Existem concorrentes que você admira ou quer superar?
-5. Quais funcionalidades já existem ou estão planejadas?
+5. Quais funcionalidades já existem ou estão planejadas? Crud de compromissos, com nome, data, horario e observações (rich text);
 6. Há restrições de orçamento ou prazo?
 7. Quais diferenciais você gostaria de ter?
-8. Como você medirá o sucesso do produto?
+8. Como você medirá o sucesso do produto? Sistema eficiente e intuitivo;
 ```
 
 ### Para Análise de Sistema Existente

@@ -45,7 +45,15 @@ Como Product Owner, preciso que você:
 ### Para Análise de Requisitos
 ```
 Analise os seguintes requisitos e crie user stories detalhadas:
-[Inserir requisitos aqui]
+- sistema de agendamento;
+- crud de compromissos, com nome, data, horario, observações (rich text);
+- visualização diario, semanal e mensal;
+- o sistema sera uma aplicação web para ser visto no navegador do celular;
+- o sistema sera feito com vue, pinia e tailwind;
+- funcionalidade de login, com as credenciais serem configuradas no .env;
+- para persistencia de dados usar local storage;
+- funcionalidade de exportar e importar dados no formato json;
+- dashboard mostrando compromissos marcado no dia vigente, quantos compromissos estão marcados e que não aconteceram;
 
 Foque em:
 - Identificar personas
