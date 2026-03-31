@@ -18,17 +18,20 @@ export const useScheduleStore = defineStore("schedule", {
     selectedDate: todayISO()
   }),
   getters: {
-    commitments: (state) => sortCommitments(state.data.commitments),
+    commitments: (state) => sortCommitments(state.data.commitments.filter((c) => !c.archived)),
+    archivedCommitments: (state) => sortCommitments(state.data.commitments.filter((c) => c.archived)),
     pendingUpcomingCommitments: (state): Commitment[] =>
       sortCommitments(
         state.data.commitments.filter((c) => {
-          if (c.completed) return false;
+          if (c.archived || c.completed) return false;
           const commitmentDate = new Date(`${c.date}T${c.time}:00`);
           return commitmentDate.getTime() >= Date.now();
         })
       ),
     commitmentsToday: (state): Commitment[] =>
-      sortCommitments(state.data.commitments.filter((c) => c.date === todayISO())),
+      sortCommitments(
+        state.data.commitments.filter((c) => !c.archived && c.date === todayISO())
+      ),
     totalMarked(): number {
       return this.commitments.length;
     },
@@ -60,6 +63,7 @@ export const useScheduleStore = defineStore("schedule", {
         time: payload.time,
         notes: payload.notes,
         completed: false,
+        archived: false,
         createdAt: now,
         updatedAt: now
       });
@@ -80,10 +84,28 @@ export const useScheduleStore = defineStore("schedule", {
       this.data.commitments = this.data.commitments.filter((c) => c.id !== id);
       this.sync();
     },
+    archiveCommitment(id: string) {
+      const item = this.data.commitments.find((c) => c.id === id);
+      if (!item || item.archived) return;
+      item.archived = true;
+      item.updatedAt = new Date().toISOString();
+      this.sync();
+    },
     replaceData(next: AppData) {
+      const list = Array.isArray(next.commitments) ? next.commitments : [];
       this.data = {
         version: next.version ?? "1.0.0",
-        commitments: Array.isArray(next.commitments) ? next.commitments : []
+        commitments: list.map((c) => ({
+          id: c.id,
+          name: c.name ?? "",
+          date: c.date ?? "",
+          time: c.time ?? "",
+          notes: c.notes ?? "",
+          completed: Boolean(c.completed),
+          archived: c.archived === true,
+          createdAt: c.createdAt ?? new Date().toISOString(),
+          updatedAt: c.updatedAt ?? new Date().toISOString()
+        }))
       };
       this.sync();
     }

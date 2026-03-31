@@ -20,6 +20,20 @@ describe("schedule store", () => {
     expect(store.commitments[0].name).toBe("Reuniao");
   });
 
+  it("arquiva compromisso", () => {
+    const store = useScheduleStore();
+    store.createCommitment({
+      name: "Arquivar",
+      date: "2026-03-31",
+      time: "11:00",
+      notes: ""
+    });
+    const id = store.commitments[0].id;
+    store.archiveCommitment(id);
+    expect(store.commitments.length).toBe(0);
+    expect(store.archivedCommitments.length).toBe(1);
+  });
+
   it("remove compromisso", () => {
     const store = useScheduleStore();
     store.createCommitment({

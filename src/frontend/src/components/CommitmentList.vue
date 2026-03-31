@@ -15,11 +15,24 @@
           <div class="min-w-0">
           <p class="font-semibold text-slate-900">{{ item.name }}</p>
           <p class="text-sm text-slate-600">{{ item.date }} - {{ item.time }}</p>
-          <p class="mt-2 whitespace-pre-wrap text-sm text-slate-700">{{ item.notes || "Sem observacoes." }}</p>
+          <div
+            v-if="plainTextFromRichText(item.notes)"
+            class="mt-2 text-sm text-slate-700"
+            v-html="sanitizeRichText(item.notes)"
+          />
+          <p v-else class="mt-2 text-sm text-slate-500">Sem observacoes.</p>
           </div>
         </div>
         <div class="flex shrink-0 flex-col gap-2">
           <button v-if="showEdit" class="btn-secondary" type="button" @click="$emit('edit', item)">Editar</button>
+          <button
+            v-if="showArchive"
+            class="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50"
+            type="button"
+            @click="$emit('archive', item.id)"
+          >
+            Arquivar
+          </button>
           <button class="btn-danger" type="button" @click="$emit('remove', item.id)">Excluir</button>
         </div>
       </div>
@@ -32,17 +45,20 @@
 
 <script setup lang="ts">
 import type { Commitment } from "../types";
+import { plainTextFromRichText, sanitizeRichText } from "../utils/richText";
 
 withDefaults(
   defineProps<{
     items: Commitment[];
     selectedIds?: string[];
     showEdit?: boolean;
+    showArchive?: boolean;
     emptyMessage?: string;
   }>(),
   {
     selectedIds: () => [],
     showEdit: true,
+    showArchive: true,
     emptyMessage: "Nenhum compromisso neste recorte."
   }
 );
@@ -50,5 +66,6 @@ defineEmits<{
   (event: "edit", payload: Commitment): void;
   (event: "remove", id: string): void;
   (event: "toggleSelect", id: string): void;
+  (event: "archive", id: string): void;
 }>();
 </script>

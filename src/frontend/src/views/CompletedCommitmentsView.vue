@@ -23,6 +23,7 @@
       empty-message="Nenhum compromisso realizado ainda."
       @edit="openEdit"
       @remove="deleteOne"
+      @archive="archiveOne"
       @toggle-select="toggleSelect"
     />
 
@@ -45,6 +46,11 @@ import type { Commitment } from "../types";
 
 const schedule = useScheduleStore();
 const items = computed(() => schedule.commitments.filter((item) => item.completed));
+const allSelected = computed(() => {
+  const list = items.value;
+  if (list.length === 0) return false;
+  return list.every((c) => selectedIds.value.includes(c.id));
+});
 const selectedIds = ref<string[]>([]);
 const showModal = ref(false);
 const editing = ref<Commitment | undefined>(undefined);
@@ -67,6 +73,11 @@ function saveItem(payload: Pick<Commitment, "id" | "name" | "date" | "time" | "n
 
 function deleteOne(id: string) {
   schedule.removeCommitment(id);
+  selectedIds.value = selectedIds.value.filter((sid) => sid !== id);
+}
+
+function archiveOne(id: string) {
+  schedule.archiveCommitment(id);
   selectedIds.value = selectedIds.value.filter((sid) => sid !== id);
 }
 

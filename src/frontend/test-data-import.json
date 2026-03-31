@@ -8,6 +8,7 @@
       "time": "09:00",
       "notes": "Revisar prioridades da semana e definir proximos passos.",
       "completed": false,
+      "archived": false,
       "createdAt": "2026-03-31T10:00:00.000Z",
       "updatedAt": "2026-03-31T10:00:00.000Z"
     },
@@ -18,6 +19,7 @@
       "time": "14:30",
       "notes": "Levar exames anteriores e lista de medicamentos.",
       "completed": false,
+      "archived": false,
       "createdAt": "2026-03-31T10:05:00.000Z",
       "updatedAt": "2026-03-31T10:05:00.000Z"
     },
@@ -28,6 +30,7 @@
       "time": "07:00",
       "notes": "Foco em mobilidade e cardio leve.",
       "completed": true,
+      "archived": false,
       "createdAt": "2026-03-31T10:10:00.000Z",
       "updatedAt": "2026-03-31T10:10:00.000Z"
     },
@@ -38,6 +41,7 @@
       "time": "20:00",
       "notes": "Ler sobre composables, stores e padroes de organizacao.",
       "completed": false,
+      "archived": false,
       "createdAt": "2026-03-31T10:15:00.000Z",
       "updatedAt": "2026-03-31T10:15:00.000Z"
     },
@@ -48,6 +52,7 @@
       "time": "12:00",
       "notes": "Energia, internet e cartao.",
       "completed": false,
+      "archived": false,
       "createdAt": "2026-03-31T10:20:00.000Z",
       "updatedAt": "2026-03-31T10:20:00.000Z"
     },
@@ -58,6 +63,7 @@
       "time": "18:00",
       "notes": "Comparar metas planejadas vs executadas e ajustar plano.",
       "completed": false,
+      "archived": false,
       "createdAt": "2026-03-31T10:25:00.000Z",
       "updatedAt": "2026-03-31T10:25:00.000Z"
     }

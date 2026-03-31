@@ -7,6 +7,7 @@ export interface Commitment {
   time: string; // HH:mm
   notes: string;
   completed: boolean;
+  archived: boolean;
   createdAt: string;
   updatedAt: string;
 }

@@ -4,6 +4,7 @@ import AgendaView from "../views/AgendaView.vue";
 import DataTransferView from "../views/DataTransferView.vue";
 import PendingCommitmentsView from "../views/PendingCommitmentsView.vue";
 import CompletedCommitmentsView from "../views/CompletedCommitmentsView.vue";
+import ArchivedCommitmentsView from "../views/ArchivedCommitmentsView.vue";
 import { useAuthStore } from "../stores/auth";
 
 const router = createRouter({
@@ -14,6 +15,7 @@ const router = createRouter({
     { path: "/agenda", component: AgendaView },
     { path: "/pendentes", component: PendingCommitmentsView },
     { path: "/realizados", component: CompletedCommitmentsView },
+    { path: "/arquivados", component: ArchivedCommitmentsView },
     { path: "/dados", component: DataTransferView }
   ]
 });

@@ -51,6 +51,7 @@
       :selected-ids="selectedIds"
       @edit="openEdit"
       @remove="removeItem"
+      @archive="archiveOne"
       @toggle-select="toggleSelect"
     />
 
@@ -143,6 +144,11 @@ function removeSelected() {
   const idsToRemove = [...selectedIds.value];
   idsToRemove.forEach((id) => schedule.removeCommitment(id));
   selectedIds.value = [];
+}
+
+function archiveOne(id: string) {
+  schedule.archiveCommitment(id);
+  selectedIds.value = selectedIds.value.filter((selectedId) => selectedId !== id);
 }
 
 function toggleSelectAllFiltered() {
